@@ -1,0 +1,29 @@
+html {
+    background-color: #ABA59A;
+    color: white;
+    font-family: 'Istanbul Pro', Arial, Helvetica, sans-serif;
+}
+
+#text {
+    font-size: 64px;
+    text-align: center;
+    animation-fill-mode: forwards;
+}
+
+#hi {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0%;
+        margin-top: 23%;
+    }
+    to {
+        opacity: 100%;
+        margin-top: 21%;
+    }
+}
