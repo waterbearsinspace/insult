@@ -19,13 +19,13 @@
       stage = 0;
 
       function update(stage) {
-        if (stage == 0) {
+        if (stage == 1) {
           el.textContent = "insulting you is hard too...";
         }
-        if (stage == 1) {
+        if (stage == 2) {
           el.textContent = "so just know...";
         }
-        if (stage == 2) {
+        if (stage == 3) {
           el.textContent = "at least I don't need the guide piece";
           document.getElementById("gif").style.opacity = 1;
           void el.offsetWidth;
@@ -39,8 +39,8 @@
           void el.offsetWidth;
           el.classList.add("hi");
           
-          update(stage);
           stage = stage + 1;
+          update(stage);
         }
       }
     </script>
