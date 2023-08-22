@@ -5,9 +5,11 @@ html {
 }
 
 #text {
-    font-size: 64px;
+    font-size: 54px;
     text-align: center;
     animation-fill-mode: forwards;
+    margin-left: 12vw;
+    margin-right: 12vw;
 
 }
 
@@ -15,7 +17,7 @@ html {
     animation-name: fade;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-    margin-top: 19vh;
+    margin-top: 17vh;
 }
 
 .gif {

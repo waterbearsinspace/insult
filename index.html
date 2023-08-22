@@ -22,25 +22,29 @@
         if (stage == 1) {
           el.textContent = "insulting you is hard too...";
         }
-        if (stage == 2) {
+        else if (stage == 2) {
           el.textContent = "so just know...";
         }
+        else if (stage == 3) {
+          el.textContent = "at least I don't need\r\nthe guide piece";
+        }
+      }
+
+      function showGif() {
         if (stage == 3) {
-          el.textContent = "at least I don't need the guide piece";
-          document.getElementById("gif").style.opacity = 1;
           void el.offsetWidth;
           document.getElementById("gif").classList.add("gif");
         }
       }
 
       el.onclick = () => {
-        if (getComputedStyle(el).opacity >= .5) {
+        if ((getComputedStyle(el).opacity >= .5) && (stage < 3)) {
+          stage = stage + 1;
           el.classList.remove("hi");
           void el.offsetWidth;
           el.classList.add("hi");
-          
-          stage = stage + 1;
           update(stage);
+          showGif();
         }
       }
     </script>
