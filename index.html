@@ -9,11 +9,39 @@
 
   <body>
     <div id="text">
-      <p id="hi">hi</p>
+      <p class="hi" id="hi">hiya friend<br><span id="click">(tap here to continue ->)</span><p>
+    </div>
+    <div id="gif">
+      <img src="./hj-laugh.gif"></img>
     </div>
     <script>
-      document.getElementById("hi").onclick = () => {
-        document.getElementById("hi").textContent = "u work too hard. take a chill pill.";
+      var el = document.getElementById("hi");
+      stage = 0;
+
+      function update(stage) {
+        if (stage == 0) {
+          el.textContent = "insulting you is hard too...";
+        }
+        if (stage == 1) {
+          el.textContent = "so just know...";
+        }
+        if (stage == 2) {
+          el.textContent = "at least I don't need the guide piece";
+          document.getElementById("gif").style.opacity = 1;
+          void el.offsetWidth;
+          document.getElementById("gif").classList.add("gif");
+        }
+      }
+
+      el.onclick = () => {
+        if (getComputedStyle(el).opacity >= .5) {
+          el.classList.remove("hi");
+          void el.offsetWidth;
+          el.classList.add("hi");
+          
+          update(stage);
+          stage = stage + 1;
+        }
       }
     </script>
   </body>

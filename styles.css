@@ -8,22 +8,39 @@ html {
     font-size: 64px;
     text-align: center;
     animation-fill-mode: forwards;
+
 }
 
-#hi {
+.hi {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    margin-top: 19vh;
+}
+
+.gif {
     animation-name: fade;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
+#click {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: top;
+}
+
+#gif {
+    text-align: center;
+    margin-bottom: 10vh;
+    opacity: 0;
+}
 
 @keyframes fade {
     from {
         opacity: 0%;
-        margin-top: 23%;
     }
     to {
         opacity: 100%;
-        margin-top: 21%;
     }
 }
