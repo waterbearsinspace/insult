@@ -16,7 +16,19 @@
     </div>
     <script>
       var el = document.getElementById("hi");
-      stage = 0;
+      var stage = 0;
+      const today = new Date();
+      const birthday = new Date("07/04/1997");
+
+      const ageYear = today.getFullYear() - birthday.getFullYear();
+
+      birthday.setFullYear(birthday.getFullYear() + 26);
+
+      var timeDiff = today.getTime() - birthday.getTime();
+      var dayDiff = timeDiff / (1000 * 3600 * 24);
+      dayDiff = Math.round(dayDiff) - 1;
+
+      console.log(dayDiff);
 
       function update(stage) {
         if (stage == 1) {
@@ -26,25 +38,19 @@
           el.textContent = "so just know...";
         }
         else if (stage == 3) {
-          el.textContent = "at least I don't need the guide piece";
-        }
-      }
-
-      function showGif() {
-        if (stage == 3) {
-          void el.offsetWidth;
+          el.textContent = "at least I'm not " + ageYear + " years and " + dayDiff + " days old";
           document.getElementById("gif").classList.add("gif");
         }
+
+        el.classList.remove("hi");
+        void el.offsetWidth;
+        el.classList.add("hi");
       }
 
       el.onclick = () => {
         if ((getComputedStyle(el).opacity >= .5) && (stage < 3)) {
           stage = stage + 1;
-          el.classList.remove("hi");
-          void el.offsetWidth;
-          el.classList.add("hi");
           update(stage);
-          showGif();
         }
       }
     </script>
